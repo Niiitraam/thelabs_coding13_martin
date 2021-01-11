@@ -243,6 +243,16 @@ return [
         ],
         ['header' => 'account_settings'],
         [
+            'text' => 'home',
+            'url'  => '/home-site/create',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Titre',
+            'url'  => '/titre',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
             'text' => 'profile',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',

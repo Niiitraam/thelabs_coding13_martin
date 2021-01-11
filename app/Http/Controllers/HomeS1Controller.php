@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HomeSite;
-use Illuminate\Http\Request;
-use App\Models\Titre;
 use App\Models\HomeS1;
-use App\Models\Video;
-use App\Models\Temoignage;
+use Illuminate\Http\Request;
 
-class HomeSiteController extends Controller
+class HomeS1Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +14,7 @@ class HomeSiteController extends Controller
      */
     public function index()
     {
-        $titre = Titre::all();
-        $presentation = HomeS1::all();
-        $video = Video::all();
-        $temoignage = Temoignage::all();
-        return view('home-site', compact('titre', 'presentation', 'video', 'temoignage'));
+        //
     }
 
     /**
@@ -32,10 +24,7 @@ class HomeSiteController extends Controller
      */
     public function create()
     {
-        $text = HomeS1::all();
-        $video = Video::all();
-        $temoignage = Temoignage::all();
-        return view('home-show', compact('text', 'video', 'temoignage'));
+        //
     }
 
     /**
@@ -52,10 +41,10 @@ class HomeSiteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\HomeSite  $homeSite
+     * @param  \App\Models\HomeS1  $homeS1
      * @return \Illuminate\Http\Response
      */
-    public function show($homeSite)
+    public function show(HomeS1 $homeS1)
     {
         //
     }
@@ -63,10 +52,10 @@ class HomeSiteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\HomeSite  $homeSite
+     * @param  \App\Models\HomeS1  $homeS1
      * @return \Illuminate\Http\Response
      */
-    public function edit(HomeSite $homeSite)
+    public function edit(HomeS1 $homeS1)
     {
         //
     }
@@ -75,21 +64,26 @@ class HomeSiteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\HomeSite  $homeSite
+     * @param  \App\Models\HomeS1  $homeS1
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HomeSite $homeSite)
+    public function update(Request $request, $homeS1)
     {
-        //
+        $update = HomeS1::find($homeS1);
+        $update->text1 = $request->text1;
+        $update->text2 = $request->text2;
+        $update->btntext = $request->btntext;
+        $update->save();
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\HomeSite  $homeSite
+     * @param  \App\Models\HomeS1  $homeS1
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HomeSite $homeSite)
+    public function destroy(HomeS1 $homeS1)
     {
         //
     }

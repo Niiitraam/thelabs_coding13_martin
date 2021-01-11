@@ -4,9 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeSiteController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ElementController;
+use App\Http\Controllers\TitreController;
+use App\Http\Controllers\HomeS1Controller;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\TemoignageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +25,12 @@ use App\Http\Controllers\ElementController;
 Route::resource('/home-site', HomeSiteController::class);
 Route::resource('/services', ServiceController::class);
 Route::resource('/blog', BlogController::class);
-Route::resource('/blog-post', BlogPostController::class);
 Route::resource('/contact', ContactController::class);
 Route::resource('/elements', ElementController::class);
+Route::resource('/titre', TitreController::class);
+Route::resource('/homeS1', HomeS1Controller::class);
+Route::resource('/video', VideoController::class);
+Route::resource('/temoignage', TemoignageController::class);
 
 Auth::routes();
 

@@ -60,30 +60,29 @@
 		</div>
 		<!-- card section end-->
 
-
 		<!-- About contant -->
 		<div class="about-contant">
 			<div class="container">
 				<div class="section-title">
-					<h2>Get in <span>the Lab</span> and discover the world</h2>
-				</div>
+					<h2>{{$titre[0]->titre}}</h2>
+				</div>	
 				<div class="row">
 					<div class="col-md-6">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximus ipsum non ornare vporttitor porttitorestibulum. Sed libero nibh, feugiat at enim id, bibendum sollicitudin arcu.</p>
+					<p>{{$presentation[0]->text1}}</p>
 					</div>
 					<div class="col-md-6">
-						<p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. Nam convallis vel erat id dictum. Sed ut risus in orci convallis viverra a eget nisi. Aenean pellentesque elit vitae eros dignissim ultrices. Quisque porttitor porttitorlaoreet vel risus et luctus.</p>
+						<p>{{$presentation[0]->text2}}</p>
 					</div>
 				</div>
 				<div class="text-center mt60">
-					<a href="" class="site-btn">Browse</a>
+				<a href="/contact" class="site-btn">{{$presentation[0]->btntext}}</a>
 				</div>
 				<!-- popup video -->
 				<div class="intro-video">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
 							<img src="img/video.jpg" alt="">
-							<a href="https://www.youtube.com/watch?v=JgHfx2v9zOU" class="video-popup">
+								<a href="{{$video[0]->lien}}" class="video-popup">
 								<i class="fa fa-play"></i>
 							</a>
 						</div>
@@ -102,90 +101,90 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-4">
 					<div class="section-title left">
-						<h2>What our clients say</h2>
+						<h2>{{$titre[1]->titre}}</h2>
 					</div>
 					<div class="owl-carousel" id="testimonial-slide">
 						<!-- single testimonial -->
 						<div class="testimonial">
 							<span>‘​‌‘​‌</span>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
+							<p>{{$temoignage[0]->temoignage}}</p>
 							<div class="client-info">
 								<div class="avatar">
-									<img src="img/avatar/01.jpg" alt="">
+								<img src="{{asset('images/'.$temoignage[0]->photo)}}" alt="">
 								</div>
 								<div class="client-name">
-									<h2>Michael Smith</h2>
-									<p>CEO Company</p>
+									<h2>{{$temoignage[0]->prenom}} {{$temoignage[0]->nom}}</h2>
+									<p>{{$temoignage[0]->fonction}}</p>
 								</div>
 							</div>
 						</div>
 						<!-- single testimonial -->
 						<div class="testimonial">
 							<span>‘​‌‘​‌</span>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
+							<p>{{$temoignage[1]->temoignage}}</p>
 							<div class="client-info">
 								<div class="avatar">
-									<img src="img/avatar/02.jpg" alt="">
+								<img src="{{asset('images/'.$temoignage[1]->photo)}}" alt="">
 								</div>
 								<div class="client-name">
-									<h2>Michael Smith</h2>
-									<p>CEO Company</p>
+									<h2>{{$temoignage[1]->prenom}} {{$temoignage[1]->nom}}</h2>
+									<p>{{$temoignage[1]->fonction}}</p>
 								</div>
 							</div>
 						</div>
 						<!-- single testimonial -->
 						<div class="testimonial">
 							<span>‘​‌‘​‌</span>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
+							<p>{{$temoignage[2]->temoignage}}</p>
 							<div class="client-info">
 								<div class="avatar">
-									<img src="img/avatar/01.jpg" alt="">
+								<img src="{{asset('images/'.$temoignage[2]->photo)}}" alt="">
 								</div>
 								<div class="client-name">
-									<h2>Michael Smith</h2>
-									<p>CEO Company</p>
+									<h2>{{$temoignage[2]->prenom}} {{$temoignage[2]->nom}}</h2>
+									<p>{{$temoignage[2]->fonction}}</p>
 								</div>
 							</div>
 						</div>
 						<!-- single testimonial -->
 						<div class="testimonial">
 							<span>‘​‌‘​‌</span>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
+							<p>{{$temoignage[3]->temoignage}}</p>
 							<div class="client-info">
 								<div class="avatar">
-									<img src="img/avatar/02.jpg" alt="">
+								<img src="{{asset('images/'.$temoignage[3]->photo)}}" alt="">
 								</div>
 								<div class="client-name">
-									<h2>Michael Smith</h2>
-									<p>CEO Company</p>
+									<h2>{{$temoignage[3]->prenom}} {{$temoignage[3]->nom}}</h2>
+									<p>{{$temoignage[3]->fonction}}</p>
 								</div>
 							</div>
 						</div>
 						<!-- single testimonial -->
 						<div class="testimonial">
 							<span>‘​‌‘​‌</span>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
+							<p>{{$temoignage[4]->temoignage}}</p>
 							<div class="client-info">
 								<div class="avatar">
-									<img src="img/avatar/01.jpg" alt="">
+								<img src="{{asset('images/'.$temoignage[4]->photo)}}" alt="">
 								</div>
 								<div class="client-name">
-									<h2>Michael Smith</h2>
-									<p>CEO Company</p>
+									<h2>{{$temoignage[4]->prenom}} {{$temoignage[4]->nom}}</h2>
+									<p>{{$temoignage[4]->fonction}}</p>
 								</div>
 							</div>
 						</div>
 						<!-- single testimonial -->
 						<div class="testimonial">
 							<span>‘​‌‘​‌</span>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.</p>
+							<p>{{$temoignage[5]->temoignage}}</p>
 							<div class="client-info">
 								<div class="avatar">
-									<img src="img/avatar/02.jpg" alt="">
+								<img src="{{asset('images/'.$temoignage[5]->photo)}}" alt="">
 								</div>
 								<div class="client-name">
-									<h2>Michael Smith</h2>
-									<p>CEO Company</p>
+									<h2>{{$temoignage[5]->prenom}} {{$temoignage[5]->nom}}</h2>
+									<p>{{$temoignage[5]->fonction}}</p>
 								</div>
 							</div>
 						</div>
@@ -415,11 +414,4 @@
 		</div>
 	</div>
 	<!-- Contact section end-->
-
-
-	<!-- Footer section -->
-	<footer class="footer-section">
-		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
-	</footer>
-	<!-- Footer section end -->
 @endsection
