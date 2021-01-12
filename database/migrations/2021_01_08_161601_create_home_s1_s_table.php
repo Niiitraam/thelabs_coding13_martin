@@ -17,7 +17,6 @@ class CreateHomeS1STable extends Migration
             $table->id();
             $table->char('text1');
             $table->char('text2');
-            $table->char('btntext');
             $table->timestamps();
         });
     }

@@ -75,7 +75,7 @@
 					</div>
 				</div>
 				<div class="text-center mt60">
-				<a href="/contact" class="site-btn">{{$presentation[0]->btntext}}</a>
+				<a href="/contact" class="site-btn">{{$button[0]->btntext}}</a>
 				</div>
 				<!-- popup video -->
 				<div class="intro-video">
@@ -105,89 +105,22 @@
 					</div>
 					<div class="owl-carousel" id="testimonial-slide">
 						<!-- single testimonial -->
+						@foreach($temoignage as $element)
 						<div class="testimonial">
 							<span>‘​‌‘​‌</span>
-							<p>{{$temoignage[0]->temoignage}}</p>
+							<p>{{$element->temoignage}}</p>
 							<div class="client-info">
 								<div class="avatar">
-								<img src="{{asset('images/'.$temoignage[0]->photo)}}" alt="">
+								<img src="{{asset('images/'.$element->photo)}}" alt="">
 								</div>
 								<div class="client-name">
-									<h2>{{$temoignage[0]->prenom}} {{$temoignage[0]->nom}}</h2>
-									<p>{{$temoignage[0]->fonction}}</p>
+									<h2>{{$element->prenom}} {{$element->nom}}</h2>
+									<p>{{$element->fonction}}</p>
 								</div>
 							</div>
 						</div>
-						<!-- single testimonial -->
-						<div class="testimonial">
-							<span>‘​‌‘​‌</span>
-							<p>{{$temoignage[1]->temoignage}}</p>
-							<div class="client-info">
-								<div class="avatar">
-								<img src="{{asset('images/'.$temoignage[1]->photo)}}" alt="">
-								</div>
-								<div class="client-name">
-									<h2>{{$temoignage[1]->prenom}} {{$temoignage[1]->nom}}</h2>
-									<p>{{$temoignage[1]->fonction}}</p>
-								</div>
-							</div>
-						</div>
-						<!-- single testimonial -->
-						<div class="testimonial">
-							<span>‘​‌‘​‌</span>
-							<p>{{$temoignage[2]->temoignage}}</p>
-							<div class="client-info">
-								<div class="avatar">
-								<img src="{{asset('images/'.$temoignage[2]->photo)}}" alt="">
-								</div>
-								<div class="client-name">
-									<h2>{{$temoignage[2]->prenom}} {{$temoignage[2]->nom}}</h2>
-									<p>{{$temoignage[2]->fonction}}</p>
-								</div>
-							</div>
-						</div>
-						<!-- single testimonial -->
-						<div class="testimonial">
-							<span>‘​‌‘​‌</span>
-							<p>{{$temoignage[3]->temoignage}}</p>
-							<div class="client-info">
-								<div class="avatar">
-								<img src="{{asset('images/'.$temoignage[3]->photo)}}" alt="">
-								</div>
-								<div class="client-name">
-									<h2>{{$temoignage[3]->prenom}} {{$temoignage[3]->nom}}</h2>
-									<p>{{$temoignage[3]->fonction}}</p>
-								</div>
-							</div>
-						</div>
-						<!-- single testimonial -->
-						<div class="testimonial">
-							<span>‘​‌‘​‌</span>
-							<p>{{$temoignage[4]->temoignage}}</p>
-							<div class="client-info">
-								<div class="avatar">
-								<img src="{{asset('images/'.$temoignage[4]->photo)}}" alt="">
-								</div>
-								<div class="client-name">
-									<h2>{{$temoignage[4]->prenom}} {{$temoignage[4]->nom}}</h2>
-									<p>{{$temoignage[4]->fonction}}</p>
-								</div>
-							</div>
-						</div>
-						<!-- single testimonial -->
-						<div class="testimonial">
-							<span>‘​‌‘​‌</span>
-							<p>{{$temoignage[5]->temoignage}}</p>
-							<div class="client-info">
-								<div class="avatar">
-								<img src="{{asset('images/'.$temoignage[5]->photo)}}" alt="">
-								</div>
-								<div class="client-name">
-									<h2>{{$temoignage[5]->prenom}} {{$temoignage[5]->nom}}</h2>
-									<p>{{$temoignage[5]->fonction}}</p>
-								</div>
-							</div>
-						</div>
+						@endforeach
+						
 					</div>
 				</div>
 			</div>
@@ -200,118 +133,25 @@
 	<div class="services-section spad">
 		<div class="container">
 			<div class="section-title dark">
-				<h2>Get in <span>the Lab</span> and see the services</h2>
+				<h2>{{$titre[2]->titre}}</h2>
 			</div>
 			<div class="row">
 				<!-- single service -->
+				@foreach($servicesAll as $element)
 				<div class="col-md-4 col-sm-6">
 					<div class="service">
 						<div class="icon">
-							<i class="flaticon-023-flask"></i>
+							<i class="{{$element->icone}}"></i>
 						</div>
 						<div class="service-text">
-							<h2>Get in the lab</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
+							<h2>{{$element->titre_service}}</h2>
+							<p>{{$element->texte_service}}</p>
 						</div>
 					</div>
 				</div>
+				@endforeach
 				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
-					<div class="service">
-						<div class="icon">
-							<i class="flaticon-011-compass"></i>
-						</div>
-						<div class="service-text">
-							<h2>Projects online</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
-				</div>
-				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
-					<div class="service">
-						<div class="icon">
-							<i class="flaticon-037-idea"></i>
-						</div>
-						<div class="service-text">
-							<h2>SMART MARKETING</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
-				</div>
-				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
-					<div class="service">
-						<div class="icon">
-							<i class="flaticon-039-vector"></i>
-						</div>
-						<div class="service-text">
-							<h2>Social Media</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
-				</div>
-				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
-					<div class="service">
-						<div class="icon">
-							<i class="flaticon-036-brainstorming"></i>
-						</div>
-						<div class="service-text">
-							<h2>Brainstorming</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
-				</div>
-				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
-					<div class="service">
-						<div class="icon">
-							<i class="flaticon-026-search"></i>
-						</div>
-						<div class="service-text">
-							<h2>Documented</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
-				</div>
-				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
-					<div class="service">
-						<div class="icon">
-							<i class="flaticon-018-laptop-1"></i>
-						</div>
-						<div class="service-text">
-							<h2>Responsive</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
-				</div>
-				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
-					<div class="service">
-						<div class="icon">
-							<i class="flaticon-043-sketch"></i>
-						</div>
-						<div class="service-text">
-							<h2>Retina ready</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
-				</div>
-				<!-- single service -->
-				<div class="col-md-4 col-sm-6">
-					<div class="service">
-						<div class="icon">
-							<i class="flaticon-012-cube"></i>
-						</div>
-						<div class="service-text">
-							<h2>Ultra modern</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
-				</div>
-			</div>
+				
 			<div class="text-center">
 				<a href="" class="site-btn">Browse</a>
 			</div>
@@ -325,33 +165,19 @@
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="section-title">
-				<h2>Get in <span>the Lab</span> and  meet the team</h2>
+			<h2>{{$titre[3]->titre}}</h2>
 			</div>
 			<div class="row">
 				<!-- single member -->
+				@foreach($team as $element)
 				<div class="col-sm-4">
 					<div class="member">
-						<img src="img/team/1.jpg" alt="">
-						<h2>Christinne Williams</h2>
-						<h3>Project Manager</h3>
+						<img src="{{asset('images/'.$element->photo)}}" alt="">
+						<h2>{{$element->prenom}} {{$element->nom}}</h2>
+						<h3>{{$element->fonction}}</h3>
 					</div>
 				</div>
-				<!-- single member -->
-				<div class="col-sm-4">
-					<div class="member">
-						<img src="img/team/2.jpg" alt="">
-						<h2>Christinne Williams</h2>
-						<h3>Junior developer</h3>
-					</div>
-				</div>
-				<!-- single member -->
-				<div class="col-sm-4">
-					<div class="member">
-						<img src="img/team/3.jpg" alt="">
-						<h2>Christinne Williams</h2>
-						<h3>Digital designer</h3>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
@@ -363,12 +189,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
-					<h2>Are you ready to stand out?</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est.</p>
+					<h2>{{$titre[4]->titre}}</h2>
+					<p>{{$titre[5]->titre}}</p>
 				</div>
 				<div class="col-md-3">
 					<div class="promo-btn-area">
-						<a href="" class="site-btn btn-2">Browse</a>
+						<a href="" class="site-btn btn-2">{{$button[1]->btntext}}</a>
 					</div>
 				</div>
 			</div>

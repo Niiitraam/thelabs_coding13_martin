@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $datas = Service::all();
-        return view('services', compact('datas'));
+        //
     }
 
     /**
@@ -25,8 +24,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        $datas = Service::all();
-        return view('servicesAll', compact('datas'));
+        $team = Team::all();
+        return view('team', compact('team'));
     }
 
     /**
@@ -37,67 +36,73 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $store = new Service;
+        $store = new Team;
 
-        $store->icone = $request->icone;
-        $store->titre_service = $request->titre_service;
-        $store->texte_service = $request->texte_service;
-
+        $store->nom = $request->nom;
+        $store->prenom = $request->prenom;
+        $store->fonction = $request->fonction;
+        $store->photo = $request->file('photo')->hashName();
         $store->save();
+
+        $request->file('photo')->storePublicly('images', 'public');
         return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show($service)
+    public function show($team)
     {
-    //
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function edit($service)
+    public function edit($team)
     {
-        $edit = Service::find($service);
-        return view('servicesAll_edit', compact('edit'));
+        $edit = Team::find($team);
+        return view('team-edit', compact('edit'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$service)
+    public function update(Request $request, $team)
     {
-        $update = Service::find($service);
+        $update = Team::find($team);
 
-        $update->icone = $request->icone;
-        $update->titre_service = $request->titre_service;
-        $update->texte_service = $request->texte_service;
+        $update->nom = $request->nom;
+        $update->prenom = $request->prenom;
+        $update->fonction = $request->fonction;
+        $update->photo = $request->file('photo')->hashName();
         $update->save();
 
+        $request->file('photo')->storePublicly('images', 'public');
         return redirect()->back();
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Service  $service
+     * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy($service)
+    public function destroy($team)
     {
-        $destroy = Service::find($service);
+        $destroy = Team::find($team);
+
         $destroy->delete();
         return redirect()->back();
     }

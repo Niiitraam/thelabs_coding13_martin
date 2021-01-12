@@ -24,7 +24,8 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        $datas = Contact::all();
+        return view('contact-show', compact('datas'));
     }
 
     /**

@@ -10,11 +10,10 @@
         <th scope="col">Prénom</th>
         <th scope="col">Nom</th>
         <th scope="col">Fonction</th>
-        <th scope="col">Témoignage</th>
         
       </tr>
     </thead>
-    <form action="/temoignage/{{$edit->id}}" method="POST" enctype="multipart/form-data">
+    <form action="/team/{{$edit->id}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
     <tbody>
@@ -24,7 +23,6 @@
       <td><input type="text" class="w-100" name="nom" value="{{$edit->nom}}"></td>
       <td><input type="text" name="prenom" value="{{$edit->prenom}}"></td>
       <td><input type="text" name="fonction" value="{{$edit->fonction}}"></td>
-      <td><input type="text" name="temoignage" value="{{$edit->temoignage}}"></td>
     </tbody>
               </table>
               <button type="submit" class="btn btn-success">Modifier</button>

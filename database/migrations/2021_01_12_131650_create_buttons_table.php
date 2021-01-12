@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServicesTable extends Migration
+class CreateButtonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('buttons', function (Blueprint $table) {
             $table->id();
-            $table->char('icone');
-            $table->char('titre_service');
-            $table->char('texte_service');
+            $table->char('rubrique');
+            $table->char('btntext');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('buttons');
     }
 }

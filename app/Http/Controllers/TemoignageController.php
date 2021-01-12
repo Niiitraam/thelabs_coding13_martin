@@ -79,9 +79,19 @@ class TemoignageController extends Controller
      * @param  \App\Models\Temoignage  $temoignage
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Temoignage $temoignage)
+    public function update(Request $request, $temoignage)
     {
-        //
+        $update = Temoignage::find($temoignage);
+        
+        $update->nom = $request->nom;
+        $update->prenom = $request->prenom;
+        $update->temoignage = $request->temoignage;
+        $update->fonction = $request->fonction;
+        $update->photo = $request->file('photo')->hashName();
+        $update->save();
+
+        $request->file('photo')->storePublicly('images', 'public');
+        return redirect()->back();
     }
 
     /**
@@ -90,8 +100,10 @@ class TemoignageController extends Controller
      * @param  \App\Models\Temoignage  $temoignage
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Temoignage $temoignage)
+    public function destroy($temoignage)
     {
-        //
+        $destroy = Temoignage::find($temoignage);
+        $destroy->delete();
+        return redirect()->back();
     }
 }

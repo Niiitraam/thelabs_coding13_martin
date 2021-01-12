@@ -10,6 +10,8 @@ use App\Http\Controllers\TitreController;
 use App\Http\Controllers\HomeS1Controller;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\TemoignageController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\ButtonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,8 @@ Route::resource('/titre', TitreController::class);
 Route::resource('/homeS1', HomeS1Controller::class);
 Route::resource('/video', VideoController::class);
 Route::resource('/temoignage', TemoignageController::class);
+Route::resource('/team', TeamController::class);
+Route::resource('/button', ButtonController::class);
 
 Auth::routes();
 

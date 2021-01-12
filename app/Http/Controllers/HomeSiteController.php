@@ -8,6 +8,10 @@ use App\Models\Titre;
 use App\Models\HomeS1;
 use App\Models\Video;
 use App\Models\Temoignage;
+use App\Models\Service;
+use App\Models\User;
+use App\Models\Team;
+use App\Models\Button;
 
 class HomeSiteController extends Controller
 {
@@ -22,7 +26,11 @@ class HomeSiteController extends Controller
         $presentation = HomeS1::all();
         $video = Video::all();
         $temoignage = Temoignage::all();
-        return view('home-site', compact('titre', 'presentation', 'video', 'temoignage'));
+        $servicesAll = Service::all();
+        $user = User::all();
+        $team = Team::all();
+        $button = Button::all();
+        return view('home-site', compact('titre', 'presentation', 'video', 'temoignage', 'servicesAll', 'user', 'team', 'button'));
     }
 
     /**

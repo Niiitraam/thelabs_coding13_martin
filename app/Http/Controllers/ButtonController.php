@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HomeS1;
+use App\Models\Button;
 use Illuminate\Http\Request;
 
-class HomeS1Controller extends Controller
+class ButtonController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class HomeS1Controller extends Controller
      */
     public function index()
     {
-        //
+        $datas = Button::all();
+        return view('button', compact('datas'));
     }
 
     /**
@@ -41,10 +42,10 @@ class HomeS1Controller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\HomeS1  $homeS1
+     * @param  \App\Models\Button  $button
      * @return \Illuminate\Http\Response
      */
-    public function show(HomeS1 $homeS1)
+    public function show(Button $button)
     {
         //
     }
@@ -52,10 +53,10 @@ class HomeS1Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\HomeS1  $homeS1
+     * @param  \App\Models\Button  $button
      * @return \Illuminate\Http\Response
      */
-    public function edit(HomeS1 $homeS1)
+    public function edit(Button $button)
     {
         //
     }
@@ -64,25 +65,21 @@ class HomeS1Controller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\HomeS1  $homeS1
+     * @param  \App\Models\Button  $button
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $homeS1)
+    public function update(Request $request, Button $button)
     {
-        $update = HomeS1::find($homeS1);
-        $update->text1 = $request->text1;
-        $update->text2 = $request->text2;
-        $update->save();
-        return redirect()->back();
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\HomeS1  $homeS1
+     * @param  \App\Models\Button  $button
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HomeS1 $homeS1)
+    public function destroy(Button $button)
     {
         //
     }
