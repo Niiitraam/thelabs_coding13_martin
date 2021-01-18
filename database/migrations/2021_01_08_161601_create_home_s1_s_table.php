@@ -15,8 +15,8 @@ class CreateHomeS1STable extends Migration
     {
         Schema::create('home_s1_s', function (Blueprint $table) {
             $table->id();
-            $table->char('text1');
-            $table->char('text2');
+            $table->string('text1', 400);
+            $table->string('text2', 400);
             $table->timestamps();
         });
     }

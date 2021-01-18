@@ -12,6 +12,7 @@ use App\Models\Service;
 use App\Models\User;
 use App\Models\Team;
 use App\Models\Button;
+use App\Models\Contact;
 
 class HomeSiteController extends Controller
 {
@@ -27,10 +28,12 @@ class HomeSiteController extends Controller
         $video = Video::all();
         $temoignage = Temoignage::all();
         $servicesAll = Service::all();
+        $service = Service::all()->random(3);
         $user = User::all();
         $team = Team::all();
         $button = Button::all();
-        return view('home-site', compact('titre', 'presentation', 'video', 'temoignage', 'servicesAll', 'user', 'team', 'button'));
+        $contact = Contact::all();
+        return view('home-site', compact('titre', 'presentation', 'video', 'temoignage', 'servicesAll', 'user', 'team', 'button', 'contact', 'service'));
     }
 
     /**

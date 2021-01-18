@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use Illuminate\Http\Request;
+use App\Models\Titre;
+use App\Models\Button;
+use App\Models\Contact;
 
 class ServiceController extends Controller
 {
@@ -15,7 +18,11 @@ class ServiceController extends Controller
     public function index()
     {
         $datas = Service::all();
-        return view('services', compact('datas'));
+        $data = Service::all()->random(3);
+        $titre = Titre::all();
+        $button = Button::all();
+        $contact = Contact::all();
+        return view('services', compact('datas', 'titre', 'button', 'data', 'contact'));
     }
 
     /**

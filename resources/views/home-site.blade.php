@@ -26,35 +26,17 @@
 			<div class="container">
 				<div class="row">
 					<!-- single card -->
+					@foreach($service as $element)
 					<div class="col-md-4 col-sm-6">
 						<div class="lab-card">
 							<div class="icon">
-								<i class="flaticon-023-flask"></i>
+								<i class="{{$element->icone}}"></i>
 							</div>
-							<h2>Get in the lab</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
+							<h2> {{$element->titre_service}}</h2>
+							<p>{{$element->texte_service}}</p>
 						</div>
 					</div>
-					<!-- single card -->
-					<div class="col-md-4 col-sm-6">
-						<div class="lab-card">
-							<div class="icon">
-								<i class="flaticon-011-compass"></i>
-							</div>
-							<h2>Projects online</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
-					<!-- single card -->
-					<div class="col-md-4 col-sm-12">
-						<div class="lab-card">
-							<div class="icon">
-								<i class="flaticon-037-idea"></i>
-							</div>
-							<h2>SMART MARKETING</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
+					@endforeach
 				</div>
 			</div>
 		</div>
@@ -111,7 +93,7 @@
 							<p>{{$element->temoignage}}</p>
 							<div class="client-info">
 								<div class="avatar">
-								<img src="{{asset('images/'.$element->photo)}}" alt="">
+								<img src="{{asset('img/instagram/'.$element->photo)}}" alt="">
 								</div>
 								<div class="client-name">
 									<h2>{{$element->prenom}} {{$element->nom}}</h2>
@@ -172,7 +154,7 @@
 				@foreach($team as $element)
 				<div class="col-sm-4">
 					<div class="member">
-						<img src="{{asset('images/'.$element->photo)}}" alt="">
+						<img src="{{asset('img/team/'.$element->photo)}}" alt="">
 						<h2>{{$element->prenom}} {{$element->nom}}</h2>
 						<h3>{{$element->fonction}}</h3>
 					</div>
@@ -210,13 +192,13 @@
 				<!-- contact info -->
 				<div class="col-md-5 col-md-offset-1 contact-info col-push">
 					<div class="section-title left">
-						<h2>Contact us</h2>
+					<h2>{{$titre[6]->titre}}</h2>
 					</div>
-					<p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. </p>
-					<h3 class="mt60">Main Office</h3>
-					<p class="con-item">C/ Libertad, 34 <br> 05200 Arévalo </p>
-					<p class="con-item">0034 37483 2445 322</p>
-					<p class="con-item">hello@company.com</p>
+					<p> {{$contact[0]->text}} </p>
+				<h3 class="mt60"> {{$titre[7]->titre}}</h3>
+					<p class="con-item"> {{$contact[0]->rue}} <br> {{$contact[0]->ville}} </p>
+					<p class="con-item">{{$contact[0]->numero}}</p>
+					<p class="con-item">{{$contact[0]->email}}</p>
 				</div>
 				<!-- contact form -->
 				<div class="col-md-6 col-pull">
@@ -231,7 +213,7 @@
 							<div class="col-sm-12">
 								<input type="text" name="subject" placeholder="Subject">
 								<textarea name="message" placeholder="Message"></textarea>
-								<button class="site-btn">send</button>
+							<button class="site-btn">{{$button[2]->btntext}}</button>
 							</div>
 						</div>
 					</form>

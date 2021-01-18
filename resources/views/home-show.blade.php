@@ -12,8 +12,6 @@
         <a class="list-group-item list-group-item-action" id="list-temoignage-list" data-toggle="list" href="#list-temoignage" role="tab" aria-controls="messages">Témoignages</a>
         <a class="list-group-item list-group-item-action" id="list-services-list" data-toggle="list" href="#list-services" role="tab" aria-controls="settings">Services</a>
         <a class="list-group-item list-group-item-action" id="list-team-list" data-toggle="list" href="#list-team" role="tab" aria-controls="settings">Team</a>
-        <a class="list-group-item list-group-item-action" id="list-ready-list" data-toggle="list" href="#list-ready" role="tab" aria-controls="settings">Ready</a>
-        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
       </div>
     </div>
     <div class="col-10">
@@ -156,10 +154,6 @@
                                   </form>
                               <a href="/team" class="btn btn-primary">Voir touts les profils</a>
         </div>
-        <div class="tab-pane fade" id="list-ready" role="tabpanel" aria-labelledby="list-ready-list">
-          
-        </div>
-        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
 
               
       </div>

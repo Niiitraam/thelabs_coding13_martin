@@ -18,6 +18,8 @@ class CreateServicesTable extends Migration
             $table->char('icone');
             $table->char('titre_service');
             $table->char('texte_service');
+            $table->char('main_title')->nullable();
+            $table->char('button')->nullable();
             $table->timestamps();
         });
     }

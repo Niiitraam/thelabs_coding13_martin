@@ -44,8 +44,7 @@ class TemoignageController extends Controller
         $temoignage->fonction = $request->fonction;
         $temoignage->photo = $request->file('photo')->hashName();
         $temoignage->save();
-
-        $request->file('photo')->storePublicly('images', 'public');
+        $request->file('photo')->storePublicly('img', 'public');
         return redirect()->back();
     }
 
