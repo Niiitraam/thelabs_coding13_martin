@@ -14,7 +14,7 @@
 @section('auth_header', __('adminlte::adminlte.register_message'))
 
 @section('auth_body')
-    <form action="{{ $register_url }}" method="post">
+    <form action="{{ $register_url }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         {{-- Name field --}}
@@ -60,6 +60,21 @@
                 </div>
             @endif
         </div>
+
+        <div class="form-group">
+            <div class="input-group">
+              <div class="custom-file">
+                <input type="file" name="photo" {{ $errors->has('photo') ? 'is-invalid' : '' }} class="custom-file-input" id="exampleInputFile">
+                <label class="custom-file-label" for="exampleInputFile">Profil picture</label>
+              </div>
+            </div>
+            @if($errors->has('photo'))
+                <div class="invalid-feedback">
+                    <strong>{{ $errors->first('photo') }}</strong>
+                </div>
+            @endif
+        </div>
+        
 
         {{-- Password field --}}
         <div class="input-group mb-3">

@@ -12,6 +12,9 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\TemoignageController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\ButtonController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentaireController;
+use App\Http\Controllers\MapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +38,10 @@ Route::resource('/video', VideoController::class);
 Route::resource('/temoignage', TemoignageController::class);
 Route::resource('/team', TeamController::class);
 Route::resource('/button', ButtonController::class);
+Route::resource('/article', ArticleController::class);
+Route::post('/articleEdit/{id}', [ArticleController::class, 'update2']);
+Route::resource('/commentaire', CommentaireController::class);
+Route::resource('/map', MapController::class);
 
 Auth::routes();
 

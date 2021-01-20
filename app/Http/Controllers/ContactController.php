@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Models\Titre;
+use App\Models\Map;
 
 class ContactController extends Controller
 {
@@ -14,7 +16,10 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contact');
+        $titre = Titre::all();
+        $contact = Contact::all();
+        $map = Map::all();
+        return view('contact', compact('titre', 'contact', 'map'));
     }
 
     /**

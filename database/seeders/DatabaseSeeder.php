@@ -25,7 +25,10 @@ class DatabaseSeeder extends Seeder
             TeamSeeder::class,
             TagSeeder::class,
             ArticleSeeder::class,
+            CategorieSeeder::class,
+            ArticleCategorieSeeder::class,
             ArticleTagSeeder::class,
+            MapSeeder::class,
         ]);
     }
 }

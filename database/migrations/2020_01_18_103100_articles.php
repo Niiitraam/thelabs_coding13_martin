@@ -17,8 +17,10 @@ class Articles extends Migration
             $table->id();
             $table->char('image');
             $table->char('date');
+            $table->string('check')->default('non');
             $table->char('titre');
             $table->char('auteur');
+            $table->string('texte');
             $table->timestamps();
         });
     }

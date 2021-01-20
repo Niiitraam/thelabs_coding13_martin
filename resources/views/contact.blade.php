@@ -19,7 +19,9 @@
 
 
 	<!-- Google map -->
-	<div class="map" id="map-area"></div>
+	<div class="map" id="map-area">
+		<iframe src="{{$map[0]->map}}" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+	</div>
 
 
 	<!-- Contact section -->
@@ -29,13 +31,13 @@
 				<!-- contact info -->
 				<div class="col-md-5 col-md-offset-1 contact-info col-push">
 					<div class="section-title left">
-						<h2>Contact us</h2>
+					<h2>{{$titre[6]->titre}}</h2>
 					</div>
-					<p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. </p>
-					<h3 class="mt60">Main Office</h3>
-					<p class="con-item">C/ Libertad, 34 <br> 05200 Arévalo </p>
-					<p class="con-item">0034 37483 2445 322</p>
-					<p class="con-item">hello@company.com</p>
+					<p> {{$contact[0]->text}} </p>
+				<h3 class="mt60"> {{$titre[7]->titre}}</h3>
+					<p class="con-item"> {{$contact[0]->rue}} <br> {{$contact[0]->ville}} </p>
+					<p class="con-item">{{$contact[0]->numero}}</p>
+					<p class="con-item">{{$contact[0]->email}}</p>
 				</div>
 				<!-- contact form -->
 				<div class="col-md-6 col-pull">

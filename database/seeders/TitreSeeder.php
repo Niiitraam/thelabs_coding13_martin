@@ -48,8 +48,12 @@ class TitreSeeder extends Seeder
                 'titre' => 'Main Office',
             ],
             [
-                'rubrique' => 'Titre service deuxieme section',
+                'rubrique' => 'Titre service première section',
                 'titre' => 'GET IN THE LAB AND SEE THE SERVICES',
+            ],
+            [
+                'rubrique' => 'Titre deuxième section service',
+                'titre' => 'GET IN THE LAB AND DISCOVER THE WORLD'
             ],
         ]
         );

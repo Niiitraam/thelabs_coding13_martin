@@ -25,9 +25,10 @@
 				<div class="col-md-8 col-sm-7 blog-posts">
 					<!-- Post item -->
 					@foreach($datas as $element)
+					@if($element->check == 'oui')
 					<div class="post-item">
 						<div class="post-thumbnail">
-							<img src="{{asset('img/'.$element->image)}}" alt="">
+							<img src="{{asset('images/'.$element->image)}}" style="width: 400px" alt="">
 							<div class="post-date">
 							<h2>{{$element->date}}</h2>
 							</div>
@@ -38,13 +39,16 @@
 								@foreach($element->articles as $items)
 								<a href="">{{$items->tags}}</a>
 								@endforeach
-								<a href="">Design, Inspiration</a>
+								@foreach($element->categories as $item)
+								<a href="">{{$item->categorie}}</a>
+								@endforeach
 								<a href="">2 Comments</a>
 							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.</p>
-							<a href="blog-post.html" class="read-more">Read More</a>
+							<p>{{$element->texte}}</p>
+							<a href="/article/{{$element->id}}" class="read-more">Read More</a>
 						</div>
 					</div>
+					@endif
 					@endforeach
 					<!-- Pagination -->
 					<div class="page-pagination">
@@ -66,12 +70,11 @@
 					<div class="widget-item">
 						<h2 class="widget-title">Categories</h2>
 						<ul>
-							<li><a href="#">Vestibulum maximus</a></li>
-							<li><a href="#">Nisi eu lobortis pharetra</a></li>
-							<li><a href="#">Orci quam accumsan </a></li>
-							<li><a href="#">Auguen pharetra massa</a></li>
-							<li><a href="#">Tellus ut nulla</a></li>
-							<li><a href="#">Etiam egestas viverra </a></li>
+							@foreach($categorie as $item)
+							<li>
+								<a href="">{{$item->categorie}}</a>
+								</li>
+							@endforeach
 						</ul>
 					</div>
 					<!-- Single widget -->
@@ -90,13 +93,9 @@
 					<div class="widget-item">
 						<h2 class="widget-title">Tags</h2>
 						<ul class="tag">
-							<li><a href="">branding</a></li>
-							<li><a href="">identity</a></li>
-							<li><a href="">video</a></li>
-							<li><a href="">design</a></li>
-							<li><a href="">inspiration</a></li>
-							<li><a href="">web design</a></li>
-							<li><a href="">photography</a></li>
+							@foreach($tags as $element)
+								<li><a href="">{{$element->tags}}</a></li>
+							@endforeach
 						</ul>
 					</div>
 					<!-- Single widget -->

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Categorie;
+use App\Models\Tag;
 
 class BlogController extends Controller
 {
@@ -16,7 +18,9 @@ class BlogController extends Controller
     public function index()
     {
         $datas = Article::all();
-        return view('blog', compact('datas'));
+        $categorie = Categorie::all();
+        $tags = Tag::all();
+        return view('blog', compact('datas', 'categorie', 'tags'));
     }
 
     /**
@@ -46,7 +50,7 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show($blog)
     {
         //
     }

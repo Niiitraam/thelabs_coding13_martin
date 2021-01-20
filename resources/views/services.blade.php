@@ -22,7 +22,7 @@
 	<div class="services-section spad">
 		<div class="container">
 			<div class="section-title dark">
-				<h2>{{$titre[7]->titre}}</h2>
+				<h2>{{$titre[8]->titre}}</h2>
 			</div>
 			<div class="row">
 				<!-- single service -->
@@ -53,7 +53,7 @@
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="section-title">
-				<h2>{{$titre[8]->titre}}</h2>
+				<h2>{{$titre[9]->titre}}</h2>
 			</div>
 			<div class="">
 				<!-- feature item -->
@@ -104,41 +104,20 @@
 		<div class="container">
 			<div class="row">
 				<!-- Single Card -->
+				@foreach($data as $element)
 				<div class="col-md-4 col-sm-6">
 					<div class="sv-card">
 						<div class="card-img">
-							<img src="img/card-1.jpg" alt="">
+							<img src="{{asset('img/'.$element->image)}}" style="width: 300px">
 						</div>
 						<div class="card-text">
-							<h2>Get in the lab</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
+						<h2>{{$element->titre_service}}</h2>
+						<p>{{$element->texte_service}}</p>
 						</div>
 					</div>
 				</div>
-				<!-- Single Card -->
-				<div class="col-md-4 col-sm-6">
-					<div class="sv-card">
-						<div class="card-img">
-							<img src="img/card-2.jpg" alt="">
-						</div>
-						<div class="card-text">
-							<h2>Projects online</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
-				</div>
-				<!-- Single Card -->
-				<div class="col-md-4 col-sm-12">
-					<div class="sv-card">
-						<div class="card-img">
-							<img src="img/card-3.jpg" alt="">
-						</div>
-						<div class="card-text">
-							<h2>SMART MARKETING</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-						</div>
-					</div>
-				</div>
+				@endforeach
+				
 			</div>
 		</div>
 	</div>

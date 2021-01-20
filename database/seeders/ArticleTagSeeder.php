@@ -27,6 +27,18 @@ class ArticleTagSeeder extends Seeder
                 'article_id' => 1,
                 'tag_id' => 3,
             ],
+            [
+                'article_id' => 2,
+                'tag_id' => 3,
+            ],
+            [
+                'article_id' => 2,
+                'tag_id' => 4,
+            ],
+            [
+                'article_id' => 3,
+                'tag_id' => 1,
+            ],
         ]
         );
     }
