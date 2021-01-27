@@ -73,7 +73,7 @@ class RegisterController extends Controller
             'photo' => $data['photo']->hashName(),
             $data["photo"]->storePublicly('img/avatar/','public'),
             'password' => Hash::make($data['password']),
-            'fonction' => 'nouveau',
+            'role_id' => 2,
         ]);
 
         //Event

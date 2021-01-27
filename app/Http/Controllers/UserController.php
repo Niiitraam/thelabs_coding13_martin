@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
 use Illuminate\Http\Request;
-use App\Models\Titre;
-use App\Models\Map;
+use App\Models\User;
 
-
-
-class ContactController extends Controller
+class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('adminAccess');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,10 +18,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $titre = Titre::all();
-        $contact = Contact::all();
-        $map = Map::all();
-        return view('contact', compact('titre', 'contact', 'map'));
+        $datas = User::all();
+        return view('role-admin', compact('datas'));
     }
 
     /**
@@ -31,8 +29,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        $datas = Contact::all();
-        return view('contact-show', compact('datas'));
+        //
     }
 
     /**
@@ -49,10 +46,10 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show($id)
     {
         //
     }
@@ -60,33 +57,42 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit($id)
     {
-        //
+        $data = User::find($id);
+        return view('edit-profil', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Contact  $contact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, $id)
     {
-        //
+        $update = User::find($id);
+
+        $update->name = $request->name;
+        $update->prenom = $request->prenom;
+        $update->email = $request->email;
+        $update->role_id = $request->role_id;
+
+        $update->save();
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
         //
     }

@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content')
-
+<h1 class="text-center">Tous les titres</h1>
 <div class="container d-flex align-items-center justify-content-center">
           <table class="table">
             <thead>

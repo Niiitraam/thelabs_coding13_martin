@@ -221,5 +221,4 @@
 			</div>
 		</div>
 	</div>
-	<!-- Contact section end-->
 @endsection

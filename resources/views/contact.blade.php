@@ -40,8 +40,9 @@
 					<p class="con-item">{{$contact[0]->email}}</p>
 				</div>
 				<!-- contact form -->
-				<div class="col-md-6 col-pull">
-					<form class="form-class" id="con_form">
+				<div id="contact" class="col-md-6 col-pull">
+					<form class="form-class" id="con_form" role="form" action="/email" method="POST">
+						@csrf
 						<div class="row">
 							<div class="col-sm-6">
 								<input type="text" name="name" placeholder="Your name">

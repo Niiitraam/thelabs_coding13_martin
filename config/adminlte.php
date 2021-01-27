@@ -241,7 +241,7 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'SITE'],
         [
             'text' => 'home',
             'url'  => '/home-site/create',
@@ -265,6 +265,12 @@ return [
         [
             'text' => 'Map',
             'url'  => '/map/create',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        ['header' => 'GERER LES COMPTES'],
+        [
+            'text' => 'Utilisateurs',
+            'url'  => '/user',
             'icon' => 'fas fa-fw fa-user',
         ],
     ],

@@ -15,6 +15,10 @@ use App\Http\Controllers\ButtonController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactEmailController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\NewsletterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +31,7 @@ use App\Http\Controllers\MapController;
 |
 */
 
-Route::resource('/home-site', HomeSiteController::class);
+Route::resource('/home-site', HomeSiteController::class)->middleware('adminAccess');
 Route::resource('/services', ServiceController::class);
 Route::resource('/blog', BlogController::class);
 Route::resource('/contact', ContactController::class);
@@ -42,6 +46,11 @@ Route::resource('/article', ArticleController::class);
 Route::post('/articleEdit/{id}', [ArticleController::class, 'update2']);
 Route::resource('/commentaire', CommentaireController::class);
 Route::resource('/map', MapController::class);
+Route::resource('/user', UserController::class);
+Route::resource('/email', ContactEmailController::class);
+Route::resource('/newsletter', NewsletterController::class);
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Auth::routes();
 
